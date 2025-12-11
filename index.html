@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Estamos desarrollando algo increíble!!</title>
+  <meta name="description" content="Página temporal: nuestro sitio está en construcción. Pronto volveremos con novedades." />
+  <style>
+    :root{
+      --bg1:#0f1724; const targetDate = new Date('2026-01-09T00:00:00');
+    function updateCountdown(){
+      const now = new Date();
+      const diff = targetDate - now;
+      if(diff <= 0){
+        document.getElementById('days').textContent = '¡Estamos en línea!';
+        return;
+      }
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const seconds = Math.floor((diff % (1000*60)) / 1000);
+
+      document.getElementById('days').textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+      --bg2:#0b1220;
+      --card:#0f1724cc;
+      --accent:#ff6b6b;
+      --accent-2:#ffd166;
+      --muted:#cbd5e1;
+      --glass: rgba(255,255,255,0.05);
+      --radius:18px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.6);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--muted);}
+
+    .wrap{
+      min-height:100%;display:flex;align-items:center;justify-content:center;padding:48px;
+    }
+
+    .card{
+      width:100%;max-width:980px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));backdrop-filter: blur(6px);border-radius:var(--radius);box-shadow:var(--shadow);padding:36px;display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;
+    }
+
+    .brand{display:flex;align-items:center;gap:16px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;box-shadow: 0 6px 18px rgba(255,107,107,0.12);}
+    .logo svg{width:32px;height:32px;filter:brightness(1.05)}
+
+    h1{margin:0;font-size:28px;color:#fff;letter-spacing:-0.4px}
+    p.lead{margin:12px 0 0;color:var(--muted);line-height:1.45}
+
+    .features{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+    .chip{padding:8px 12px;border-radius:999px;background:var(--glass);color:var(--muted);font-size:13px}
+
+    .visual{display:flex;align-items:center;justify-content:center}
+    .visual .construction{
+      width:220px;height:220px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow: inset 0 -40px 120px rgba(0,0,0,0.35);
+    }
+
+    /* animated gear */
+    .gear{width:108px;height:108px;display:block}
+    @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    .gear svg{display:block;animation: spin 8s linear infinite}
+
+    .right{padding:18px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+    .count{font-size:42px;color:var(--accent);margin:0}
+    .small{font-size:13px;color:var(--muted);margin-top:6px}
+
+    form{margin-top:16px;display:flex;gap:8px}
+    input[type="email"]{flex:1;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted);outline:none}
+    button{padding:12px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#081225;font-weight:600;cursor:pointer}
+
+    footer{margin-top:18px;font-size:13px;color:rgba(203,213,225,0.7);display:flex;justify-content:space-between;align-items:center}
+
+    /* responsive */
+    @media (max-width:880px){
+      .card{grid-template-columns:1fr;}
+      .visual{order:-1;margin-bottom:8px}
+    }
+
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <section class="card" aria-labelledby="title">
+
+      <div>
+        <div class="brand">
+          <span class="logo" aria-hidden="true">
+            <!-- simple icon -->
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 12h18" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/>
+              <path d="M8 7h8v10H8z" fill="rgba(255,255,255,0.12)"/>
+              <path d="M10 9h4v6h-4z" fill="#fff" opacity="0.08"/>
+            </svg>
+          </span>
+          <div>
+            <h1 id="title">Renovación en curso...</h1>
+            <p class="lead">Estamos desarrollando una experiencia inolvidable...volveremos pronto.</p>
+          </div>
+        </div>
+
+        <div class="features" aria-hidden="true">
+          <span class="chip">Tendremos más V & F...</span>
+          <span class="chip">Mejores recuerdos</span>
+          <span class="chip">Experiencia renovada.</span>
+        </div>
+
+        <footer>
+          <div>¿Necesitas algo? <strong style="color:#fff">frankjavier39@gmail.com</strong></div>
+          <small>© <span id="year"></span> V & F </small>
+        </footer>
+      </div>
+
+      <aside class="right" aria-labelledby="status">
+        <div class="visual">
+          <div class="construction" role="img" aria-label="engranaje girando en construcción">
+            <div class="gear" aria-hidden="true">
+              <!-- gear SVG -->
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                  <defs>
+                    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stop-color="#ffd166"/>
+                      <stop offset="1" stop-color="#ff6b6b"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M50 30a20 20 0 1 0 0 40 20 20 0 1 0 0-40z" stroke-width="6"/>
+                  <path d="M50 10v8M50 82v8M10 50h8M82 50h8M22 22l5.6 5.6M72.4 72.4l5.6 5.6M22 78l5.6-5.6M72.4 27.6l5.6-5.6"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;text-align:center">
+          <div id="countdown" aria-live="polite">
+            <p class="small">Lanzamiento estimado</p>
+            <p class="count" id="days">Próximamente</p>
+          </div>
+
+          <form id="notify" onsubmit="return subscribe(event)" aria-label="Formulario de notificación">
+            <label for="email" class="visually-hidden">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required />
+            <button type="submit">Notificarme</button>
+          </form>
+        </div>
+      </aside>
+
+    </section>
+  </main>
+
+  <script>
+    // set copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // small local subscribe handler (no server) — stores to localStorage
+    function subscribe(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if(!email) return;
+      let list = JSON.parse(localStorage.getItem('waitlist') || '[]');
+      if(!list.includes(email)) list.push(email);
+      localStorage.setItem('waitlist', JSON.stringify(list));
+      document.getElementById('email').value = '';
+      alert('Gracias — te notificaremos cuando lancemos.');
+      return false;
+    }
+
+    // Optional: show "Próximamente" countdown if you set a date
+    // Uncomment and set targetDate to enable a live countdown.
+    
+    const targetDate = new Date('2026-01-09T12:00:00');
+    function updateCountdown(){
+      const now = new Date();
+      const diff = targetDate - now;
+      if(diff <= 0){
+        document.getElementById('days').textContent = '¡Estamos en línea!';
+        return;
+      }
+      const days = Math.floor(diff / (1000*60*60*24));
+      document.getElementById('days').textContent = days + ' días';
+    }
+    setInterval(updateCountdown, 1000*60*60);
+    updateCountdown();
+    
+  </script>
+
+</body>
+</html>
